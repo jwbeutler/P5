@@ -38,26 +38,26 @@ public class Main {
 
         if (create) {
             System.out.println("Create Reiziger with OVChipkaart");
-            Reiziger Hein = new Reiziger(6, "Hein", "", "Kunst", java.sql.Date.valueOf("1995-03-10"));
+            Reiziger Hein = new Reiziger(96, "Hein", "", "Beutler", java.sql.Date.valueOf("1997-03-10"));
 
-            OVChipkaart Julian_OV = new OVChipkaart(98765, java.sql.Date.valueOf("2019-12-31"), 1, 500f, Hein);
-            Hein.setOVChipkaarten(new ArrayList<>(Collections.singletonList(Julian_OV)));
+            OVChipkaart Hein_OV = new OVChipkaart(9595, java.sql.Date.valueOf("2020-12-31"), 1, 500f, Hein);
+            Hein.setOVChipkaarten(new ArrayList<>(Collections.singletonList(Hein_OV)));
 
             ReizigerService.getInstance().persist(Hein);
 
-            System.out.println("Newly created Reiziger ID 6 from DB");
-            r = ReizigerService.getInstance().findById(6);
+            System.out.println("Newly created Reiziger ID 96 from DB");
+            r = ReizigerService.getInstance().findById(96);
             System.out.println(r);
         }
 
         if (delete) {
-            System.out.println("Delete Reiziger ID 6");
+            System.out.println("Delete Reiziger ID 96");
             ReizigerService.getInstance().delete(r);
 
             r = ReizigerService.getInstance().findById(6);
 
             if (r == null) {
-                System.out.println("Reiziger ID 6 deleted");
+                System.out.println("Reiziger ID 96 deleted");
             } else {
                 System.out.println("Reiziger ID 6 was not deleted");
             }
